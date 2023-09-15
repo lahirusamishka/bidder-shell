@@ -4,8 +4,8 @@ down:
 shell:
 	docker-compose -f ../bidder-app/drop-in-docker-php/docker-compose.yml exec -u ${UID}:${UID} app sh
 up:
-	docker-compose -f ../bidder-app/drop-in-docker-php/docker-compose.yml up -d
 	./bidderman.sh
+	docker-compose -f ../bidder-app/drop-in-docker-php/docker-compose.yml up -d
 	docker-compose -f ../bidder-app-mysql/docker-compose.yml up -d
 up-f:
 	docker-compose -f ../bidder-app/drop-in-docker-php/docker-compose.yml up --build --remove-orphans
